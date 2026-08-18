@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sai University Timetable</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="brand">
+        <h1>🎓 Sai University</h1>
+        <p>Computing & Data Science</p>
+    </div>
+
+    <div class="header-right">
+        <span id="lastUpdated">Loading...</span>
+        <button id="themeBtn">🌙</button>
+    </div>
+
+</header>
+
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <h2>Timetable</h2>
+
+        <button class="day-btn active" data-day="Monday">
+            Monday
+        </button>
+
+        <button class="day-btn" data-day="Tuesday">
+            Tuesday
+        </button>
+
+        <button class="day-btn" data-day="Wednesday">
+            Wednesday
+        </button>
+
+        <button class="day-btn" data-day="Thursday">
+            Thursday
+        </button>
+
+        <button class="day-btn" data-day="Friday">
+            Friday
+        </button>
+
+        <button class="day-btn" data-day="Saturday">
+            Saturday
+        </button>
+
+        <hr>
+
+        <button id="todayBtn" class="today-btn">
+            📅 Today's Schedule
+        </button>
+
+        <button id="refreshBtn" class="refresh-btn">
+            🔄 Refresh
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <section class="hero">
+
+            <div>
+
+                <span>SAI UNIVERSITY</span>
+
+                <h2 id="selectedDay">
+                    Monday
+                </h2>
+
+                <p>
+                    Academic Year 2026–27
+                </p>
+
+            </div>
+
+            <div class="date">
+                <span id="currentDate"></span>
+            </div>
+
+        </section>
+
+
+        <!-- STATS -->
+
+        <section class="stats">
+
+            <div class="stat">
+
+                <div class="icon">📚</div>
+
+                <div>
+                    <small>Classes</small>
+                    <strong id="classCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="icon">⏰</div>
+
+                <div>
+                    <small>First Class</small>
+                    <strong id="firstClass">--</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="icon">🔄</div>
+
+                <div>
+                    <small>Data Source</small>
+                    <strong>Google Sheets</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTROLS -->
+
+        <section class="controls">
+
+            <div>
+
+                <h2>Class Schedule</h2>
+
+                <p id="description">
+                    Loading timetable...
+                </p>
+
+            </div>
+
+
+            <input
+                type="text"
+                id="search"
+                placeholder="🔍 Search subject..."
+            >
+
+        </section>
+
+
+        <!-- LOADING -->
+
+        <div id="loading" class="message">
+            Loading timetable from Google Sheets...
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div id="error" class="message error">
+        </div>
+
+
+        <!-- TIMETABLE -->
+
+        <div id="timetable"></div>
+
+    </main>
+
+</div>
+
+
+<footer>
+
+    <p>
+        Sai University Timetable © 2026
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
